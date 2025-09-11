@@ -1,0 +1,65 @@
+    <!DOCTYPE html> 
+    <html lang="es"> 
+
+        <head> 
+            <meta charset="UTF-8"> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <title>Contacto</title>
+            <!-- Link para usar elementos de Bootstrap -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <!-- Link para google fonts (logo de la página)--> 
+            <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">        
+            <!-- Link para el archivo css de los estilos-->
+            <link rel="stylesheet" href="CSS/styles.css">
+        </head>
+
+
+        <body> 
+            <header> 
+                <h1>SuckDick</h1>
+                <div class="header-buttons">
+                    <a href="index.html" class="header-btn">Inicio</a> <!-- Uso de <a href= en vez de <button> para que nos lleve a la página_destino del formulario contacto-->
+                    <a href="fcontacto.html" class="header-btn">Contacto</a>
+                    <a href="carrito.html" class ="header-btn" target="_blank">Ver Carrito</a>
+                    <!-- Target="_blank" es para que abra una pestaña nueva y no reemplace la actual-->
+                </div>
+            </header>
+
+            <main> 
+                <!-- Sacado de bootstrap: Formulario -->
+                <form class="contact-form" onsubmit="return validarFormulario1()">
+                    <h2>Contacto</h2> 
+                    <div class="mb-3"> <!-- mb-3 es una clase bootstrap -->
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre"> <!-- Form-control es para la clase bootstrap del formulario -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Correo">  <!-- placeholder es el texto que está de antemano en el campo para escribir -->
+                        <!--   type="email" agrega una validación nativa de HTML5 para los correos: no deja ingresar correos sin @ o sin dominio. -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button> <!--btn btn-primary es un botón azul estilo Bootstrap.-->
+                </form>
+
+                <!-- Sacado de bootstrap: Popup de las alertas roja y verde del formulario contacto -->
+                <div class="container mt-3">
+                    <div id="alerta" class="alert d-none" role="alert"></div>
+                </div>
+
+                
+            </main>
+
+
+            <footer>
+                <p>2025 Mi Sitio Web</p>
+            </footer>
+
+            <script src="JavaScript/funciones.js"></script> <!-- Necesario para indicar que hay scripts js en el archivo -->
+        </body> 
+
+
+    </html> 

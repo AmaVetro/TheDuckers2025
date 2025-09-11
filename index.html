@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+
+    <head> 
+        <meta charset="UTF-8"> <!-- Importar carácteres del español -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajustar página a la pantalla del dispositivo, initial scale=1.0 para que la pag comience con zoom 100%-->
+        <title>SuckDick</title> 
+        <!-- Link para usar elementos de Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Link para google fonts (logo de la página)--> 
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">        
+        <!-- Link para el archivo CSS --> 
+        <link rel="stylesheet" href="CSS/styles.css">
+    </head>
+
+
+    <body> 
+        <header> 
+            <h1>SuckDick</h1>
+            <div class="header-buttons"> 
+                <a href="index.html" class="header-btn">Inicio</a>
+                <a href="fcontacto.html" class="header-btn">Contacto</a> <!-- Uso de <a href= en vez de <button> para que nos lleve a la página_destino del formulario contacto-->
+                <a href="carrito.html" class ="header-btn" target="_blank">Ver Carrito</a>
+                <!-- Target="_blank" es para que abra una pestaña nueva y no reemplace la actual-->
+            </div>
+        </header>
+
+
+        <main>
+            <h2>Catálogo</h2>
+            <div class="productos-container"> <!-- div específico para darle estilo al catálogo de productos -->
+                <!-- Producto 1 -->
+                <div class="producto"> <!-- Se crea div llamado "producto" que se usará para todos los productos, pero cada uno tendrá nombre, descripción, imagenes y precio distintos -->
+                    <img src="IMG/1.jpg" alt="Producto 1">
+                    <h3>Producto 1</h3>
+                    <p1>Descripción breve del producto 1.</p1>
+                    <p class="precio">$19.990</p>
+                    <button class="btn-agregar">Añadir a carrito</button>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="producto">
+                    <img src="IMG/2.jpg" alt="Producto 2">
+                    <h3>Producto 2</h3>
+                    <p1>Descripción breve del producto 2.</p1>
+                    <p class="precio">$29.990</p>
+                    <button class="btn-agregar">Añadir a carrito</button>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="producto">
+                    <img src="IMG/3.jpg" alt="Producto 3">
+                    <h3>Producto 3</h3>
+                    <p1>Descripción breve del producto 3.</p1>
+                    <p class="precio">$24.990</p>
+                    <button class="btn-agregar">Añadir a carrito</button>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="producto">
+                    <img src="IMG/4.jpg" alt="Producto 4">
+                    <h3>Producto 4</h3>
+                    <p1>Descripción breve del producto 4.</p1>
+                    <p class="precio">$14.990</p>
+                    <button class="btn-agregar">Añadir a carrito</button>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="producto">
+                    <img src="IMG/5.jpg" alt="Producto 5">
+                    <h3>Producto 5</h3>
+                    <p1>Descripción breve del producto 5.</p1>
+                    <p class="precio">$39.990</p>
+                    <button class="btn-agregar">Añadir a carrito</button>
+                </div>
+            </div>
+        </main>
+        
+
+        <footer> 
+            <p>2025 Mi Sitio Web</p>
+        </footer>
+
+
+        <script src="JavaScript/funciones.js"></script> <!-- Necesario para indicar que hay scripts js en este archivo -->
+    </body>
+    
+    
+</html> 

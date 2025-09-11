@@ -1,0 +1,259 @@
+
+/* ojo: los colores que se definen aquí pueden verse suplantados si importamos un estilo de bootstrap en el head del html
+ya que el navegador le da más importancia al estilo general del bootstrap. Si queremos mantener colores y cosas de aquí
+simplemente ponemos !important antes del ; de finalización de un código, por ejemplo: 
+background-color: #ffffff !important; */
+
+
+
+/*  ********************************************************* Sección del Body ***************************************************************/
+body {
+    min-height: 100vh;  
+    height: 100%;
+    font-family: Arial;
+    margin: 0;
+    display: flex;
+    flex-direction:column;
+    background-color: #212121  ; 
+}
+
+
+
+/*  ********************************************************* Sección del Header ***************************************************************/
+header { 
+    background: #212121;
+    color: #ff4c4c;
+    padding: 20px;  /*Espaciado entre los elementos y los bordes del header*/
+    font-family: 'Russo One';
+    letter-spacing: 0.5px; /*Espaciado entre letras*/
+    font-size: 25px; 
+    align-items: center; /*Centra todos los elementos un poco más*/
+    display: flex;  /*Hace que todos los elementos se vean en horizontal*/
+    gap: 30px;   /*Espaciado entre todos los elementos*/
+}
+
+
+/*Estilo de la div class="header-buttons" */
+.header-buttons { 
+    display: flex; /*Ordena los elementos aún más en horizontal*/
+    gap: 15px; /*Espacio entre los botones */
+}
+
+.header-btn { /*estilo preciso de los botones (etapa sin efectos)*/
+    background-color: transparent;   
+    border: none;    /* Botones sin borde al principio */
+    color: #ff4c4c;   
+    font-family: 'Russo One'; 
+    font-size: 16px;
+    padding: 6px 14px;  /*Espaciado entre los botones y los bordes del header*/
+    text-transform: uppercase;       /* letras mayúsculas */
+    text-decoration: none;       /* Para quitar el subrayado de los botones cuando se les inserta un link */
+}
+
+.header-btn:hover { /*hover es para efectos en los botones*/
+    cursor: pointer;    /* Cambia el cursor a una "mano" cuando pasa por los botones */
+    transition: all 0.3s ease;       /* Transición suave de 0.3 para los efectos de los botones */
+    background-color: #ff4c4c;       /* fondo rojo al pasar el mouse */
+    box-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c;  /* neón rojo al pasar el mouse */
+    color: #ffffff;                
+    transform: translateY(-2px);     /* Pequeño levantamiento del botón al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+
+/*  ********************************************************* Sección del Main ***************************************************************/
+
+main {
+    background: #35424a;
+    text-align: center;
+    flex: 1;                /* Ocupa todo el espacio disponible entre header y footer */
+    padding: 20px;          /* Espacio entre el elemento y los bordes que lo contienen */
+}
+
+
+
+
+
+
+
+
+
+
+/*  ********************************************************* Sección del Footer ***************************************************************/
+
+footer {
+    background: #8B0000;
+    color: #ffffff;
+    text-align: center;  
+    padding: 10px 0;       /* Espacio entre el elemento y los bordes que lo contienen */
+}
+
+
+
+
+
+
+
+/*  ***************************************** Sección de segmentos de navegación para links ******************************************************/
+nav{
+	margin-top:20px;
+	text-align: center;
+}
+
+nav ul{ /*Lista dentro de la sección de navegación*/
+	list-style:none;
+}
+
+nav ul li{ /*Links dentro de la lista*/
+	display: inline-block;
+	margin: 10px;
+}
+
+nav ul li a {
+    text-decoration:none;
+    display: block;
+    background-color: #2E8B57;
+    padding: 10px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: sans-serif;
+}
+
+nav ul li a:hover{ /*Efectos adicionales para los links*/
+	background-color: #7FFFD4; 
+}
+
+#navegacion{
+	margin-top: 10px;
+	display: inline-block;
+	width:100%;
+	text-align: center;
+}
+
+
+
+
+
+
+
+/*  ********************************************************* Sección de títulos y párrafos *********************************************************/
+
+h2{ /*Títulos grandes*/
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Russo One';
+    margin-bottom: 20px;
+}
+
+h3 { /*Títulos de los productos*/
+    font-size: 18px;       
+    color: #ffffff;        
+    margin: 10px 0 5px 0;  /* Margen superior e inferior ajustado */
+    font-family: 'Russo One'; 
+}
+
+p1{
+    font-size: 12px; 
+    color: #FFFFFF;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  ********************************************************* Sección del Formulario ***************************************************************/
+
+/*Modificaciones al formulario Bootstrap, para que se adhiera mejor a nuestra pág.*/
+.contact-form { /* Modificando el formulario Bootstrap de forma general*/
+    max-width: 500px;       /* ancho máximo del formulario */
+    margin: 0 auto;          /* centra el formulario */
+    
+    padding: 20px;
+    background-color: #708090;  
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form .btn-primary { /*Modificaciones personales al btn-primary de bootstrap para que se adhiera visualmente a nuestra pág.*/
+    background-color: #ff4c4c;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+/*  ********************************************************* Sección de Divs creados ***************************************************************/
+
+
+/* Div "productos-container" que está en el main de index.html */
+
+.productos-container {    /*Estilo general de la lista de productos*/
+    display: flex;            /* Los productos en fila */
+    flex-wrap: wrap;          /* Si la pantalla es muy pequeña, bajan a la siguiente línea */
+    gap: 20px;                /* Separación mínima entre productos */
+    margin-top: 20px;   
+}
+
+.producto {    /*Estilo específico de cada producto, este mismo estilo es usado para todos los productos*/
+    background-color: #708090; 
+    padding: 15px;  /* Espacio entre el elemento y los bordes que lo contienen */
+    border-radius: 10px;  /*Bordes redondeados*/
+    text-align: center;
+    width: 18%;               /* 5 productos en fila aproximadamente */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    flex-grow: 1;             /* Para que se distribuyan equitativamente */
+}
+
+.producto img {     /* Estilo específico de la imagen de cada producto */
+    width: 100%;              /* Ocupa todo el ancho del div del producto */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.producto .precio {     /* Estilo visual del precio */
+    font-weight: bold;
+    color: #ff4c4c;
+    margin-bottom: 10px;
+}
+
+.producto .btn-agregar {     /* Estilo del Botón "Añadir a carrito" */
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;      /* Espacio entre el botón y los bordes que lo contienen */
+    text-transform: uppercase;
+    border-radius: 5px;    /*Bordes redondeados*/
+}
+
+.producto .btn-agregar:hover {     /* Efectos para el botón "Añadir a carrito" */
+    transition: all 0.3s ease;    /*Demora antes del efecto*/
+    cursor: pointer;     /*mouse se vuelve "manito" cuando pasa por el botón"*/
+    background-color: #ffffff;
+    color: #ff4c4c;
+    border: 1px solid #ff4c4c;
+}
