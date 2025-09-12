@@ -4,5 +4,5 @@
 # Archivos temporales o logs
 *.log
 
-# Dependencias (si usas Node.js)
+# Dependencias (si se usa Node.js)
 node_modules/

@@ -1,38 +1,71 @@
 
 
 
-
-
-
-
+//Para el formulario contacto
 function validarFormulario1() {
-    let nombre = document.getElementById("nombre").value; //Crea variables y les agrega lo que se escribe en los id nombre, email, mensaje, alerta
-    let email = document.getElementById("email").value;  //document es para manipular archivos html, getElementById para capturar los valores de los id del archivo html
-    let mensaje = document.getElementById("mensaje").value; 
-    let alerta = document.getElementById("alerta"); 
+    //let: declara variable     ////    document.getElementById("nombre").value: obtiene el valor ingresado en el campo
+    let nombre = document.getElementById("nombre").value;
+    let email = document.getElementById("email").value;
+    let mensaje = document.getElementById("mensaje").value;
 
-    // Validación 1: Si alguno de las 3 variables vienen vacías, se arroja alerta
-    if (nombre.trim() === "" || email.trim() === "" || mensaje.trim() === "") { //trim quita los espacios ingresados por accidente
-        alerta.className = "alert alert-danger"; //Se activa el popup puesto en fcontacto. Como es de bootstrap, este popup ya viene en rojo.
-        alerta.innerHTML = "❌ Debes completar todos los campos.";
-        // Ocultar el aviso automáticamente después de 3 segundos:
-        setTimeout(() => {
-            alerta.classList.add("d-none");
-        }, 3000);
-        return false; //Si hay retorno false, el formulario no envía los datos (tmb sirve para no refrescar la pag y que se alcance a ver el popup)
+    // Validación básica
+    if (nombre.trim() === "" || email.trim() === "" || mensaje.trim() === "") {//trim() es para borrar espacios que el usuario pueda haber ingresado por error
+        alert("No pueden haber campos vacios ❌");
+        return false;  //si hay return false, el formulario NO se envía a la BD.
     }
 
-    // Pero si las 3 variables si vienen llenas, se arroja popup verde
-    alerta.className = "alert alert-success"; //Se activa el popup puesto en fcontacto. Como es de bootstrap, este popup ya viene en verde.
-    alerta.innerHTML = "✅ Formulario enviado con éxito.";
-
-    // Ocultar el aviso automáticamente después de 3 segundos
-    setTimeout(() => {
-        alerta.classList.add("d-none");
-    }, 3000);
-
-    return false; //Ya que no hay envío real por ahora, se retorna false para que se pueda visualizar el popup verde
-    //Ya que si se pone return true el formulario si se envia, y la página instantaneamente se recarga, por lo que no se alcanzan a ver los popup
+    alert(" Formulario enviado correctamente ✅\n Se le enviará un correo para confirmar 😉");
+    return true; //Si llega hasta aquí, return true hace que el formulario SÍ se envíe a la BD.
+}
 
 
+
+
+//Función para los botones "añadir carrito"
+function anadirAlCarrito(nombre, precio) { 
+    //localStorage: guarda info temporal en el navegador (para que sea persistente y no se borre al refrescar la pag o irse de la pag)
+    //localStorage trabaja con Strings guardandolos o sacandolos de la memoria temporal del navegador, 
+    //por tanto luego de que actúa, JS necesita JSON.parse o JSON.stringify para transformar esos strings a lista y poder manipular la lista del carrito
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
+    carrito.push({ nombre, precio }); 
+    localStorage.setItem("carrito", JSON.stringify(carrito)); 
+    alert(`✅${nombre} ha sido agregado al carrito✅`);
+}
+
+
+//Función mostrar carrito, para la página carrito.html
+function mostrarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || []; //JSON.parse transforma los strings que captura el localstorage del navegador en un arreglo de objetos, para poder mostrarlos
+    const carritoBody = document.getElementById('carrito'); //Se obtiene el elemento de id carrito
+    carritoBody.innerHTML = ''; // Limpiar elcontenido del carrito
+    let total = 0;
+    carrito.forEach((producto, index) => { //Se consiguen los productos de index.html por su indice
+    total += producto.precio;              //Se suma el precio de todos los que hayan para generar el total
+    carritoBody.innerHTML += `
+            <tr>
+                <td>${producto.nombre}</td>
+                <td>$${producto.precio}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>`;
+    });
+
+    if (carrito.length === 0) {
+    carritoBody.innerHTML =
+        '<tr><td colspan="3">No hay productos en el carrito.</td></tr>';
+    }
+
+    document.getElementById("total").innerText = `Total: $${total}`;
+}
+
+
+//Para eliminar cosas del carrito, mediante su indice
+function eliminarDelCarrito(index) {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || []; //localstorage consigue los productos almacenados en formato string del navegador --> JSON.parse los transforma a arreglo para poder modificarlos
+    carrito.splice(index, 1); // Eliminar el producto del carrito
+    localStorage.setItem("carrito", JSON.stringify(carrito)); //JSON.stringify convierte la lista modificada a String, así localStorage la toma denuevo, ya sincronizada
+    mostrarCarrito(); // Actualizar la vista del carrito con la función de más arriba
 }
