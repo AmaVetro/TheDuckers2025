@@ -1,8 +1,0 @@
-# Configuración de VS Code
-.vscode/
-
-# Archivos temporales o logs
-*.log
-
-# Dependencias (si se usa Node.js)
-node_modules/
