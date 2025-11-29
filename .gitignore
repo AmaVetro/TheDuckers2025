@@ -1,0 +1,20 @@
+# BACKEND (Spring Boot)
+BackendDuckers/target/
+BackendDuckers/.idea/
+BackendDuckers/.vscode/
+BackendDuckers/*.iml
+BackendDuckers/logs/
+BackendDuckers/*.log
+BackendDuckers/application.properties
+BackendDuckers/application.yml
+
+# FRONTEND (React/Vite)
+FrontEndDuckers/node_modules/
+FrontEndDuckers/dist/
+FrontEndDuckers/.vscode/
+FrontEndDuckers/.idea/
+FrontEndDuckers/npm-debug.log*
+
+# SISTEMA
+.DS_Store
+Thumbs.db
